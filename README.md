@@ -1,2 +1,2 @@
-# CARDS: Computer-assisted recognition of (climate) denial and skepticism
+# CARDS: Computer-assisted recognition of (climate change) denial and skepticism
 Under construction!

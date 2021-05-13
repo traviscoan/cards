@@ -1,4 +1,5 @@
-# Utility functions for CARDS project
+'''A handful of utility functions.'''
+
 import csv
 import json
 
@@ -7,38 +8,48 @@ def flatten(list_of_lists):
     '''
     Takes a list of lists and returns the flattned version.
 
-    :param list_of_lists: A list of lists to flatten
-    :return: Flattened list
+    Args:
+        list_of_lists (list): A list of lists to flatten
+    
+    Returns: 
+        list: The flattened list
     '''
 
     return [item for sublist in list_of_lists for item in sublist]
 
 
-def read_csv(path_):
+def read_csv(path):
     '''
     Takes an absolute path to a CSV file and returns file as
     a Python list.
 
-    :param path_: Absolute path to CSV file.
-    :return: File as a list of lists.
+    Args:
+        path (str): Absolute path to CSV file.
+    
+    Returns: 
+        list: The CSV file as a list of lists.
     '''
 
-    with open(path_, 'r', encoding='utf-8', errors='replace') as csvfile:
+    with open(path, 'r', encoding='utf-8', errors='replace') as csvfile:
         csvreader = csv.reader(csvfile)
         return [row for row in csvreader]
 
 
-def write_json(path_, content_):
+def write_json(path, content):
     '''
     Takes a path and list of dictionaries and writes a pretty, POSIX
     compatiable JSON file.
 
-    :param path_: Path to file where JSON should be written
-    :return: None
+    Args:
+        path (str): Path to file where JSON should be written.
+        content (list): List of dictionaries to write.
+
+    Returns:
+        None
     '''
 
-    with open(path_, 'w') as f:
-        json.dump(content_, f, indent=4, separators=(',', ': '), sort_keys=True)
+    with open(path, 'w') as f:
+        json.dump(content, f, indent=4, separators=(',', ': '), sort_keys=True)
         # add trailing newline for POSIX compatibility
         f.write('\n')
 
@@ -47,8 +58,11 @@ def drop_duplicates(seq):
     '''
     Takes a list and drops duplicates in place.
 
-    :param seq: Iterable
-    :return: List without duplicates
+    Args:
+        seq (iterable): Iterable
+    
+    Returns: 
+        list: List without duplicates
     '''
     seen = set()
     seen_add = seen.add
