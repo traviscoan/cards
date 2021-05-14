@@ -1,5 +1,6 @@
 /data
 __MACOSX
+__pycache__
 
 # R junk #
 ##########
