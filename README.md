@@ -34,9 +34,3 @@ The code is organized as follows:
 
 * `preprocess.py`: A set of functions to preprocess and tokenize the text.
 * `fit/`: As described more fully in the paper, our model uses a simple ensemble of a logistic classifier and the [RoBERTa](https://arxiv.org/abs/1907.11692) architecture. The [fit](https://github.com/traviscoan/cards/tree/master/fit) directory provides relevant information on how we trained the model.
-
-### Contact us
-
-While we've aimed to provide a "complete" list of available transcripts, please reach out if we've missed something or if you spot any errors! Contact info:
-
-* Travis (T.Coan@exeter.ac.uk)
