@@ -46,4 +46,28 @@ The `roberta/` subdirectory contains the code to fit and evaluate the model. Spe
 * `cards_evaluation.ipynb`: Provides the code to evaluate the model performance on held-out data.
 * `cards_inference.ipynb`: Provides code to infer classes in unseen data.
 
-#### Logistic
+#### Logistic classifer
+
+To run the logistic side of the model, you can use the following process:
+
+```python
+from utils import read_csv
+import preprocess as pp
+from fit.logistic import fit_logistic_classifier
+
+# Read in downloaded training data
+data = read_csv("data/training/training.csv", remove_header=True)
+
+# Clean and tokenize. Uses unthreaded spaCy, so it is slow!
+tokens = [[pp.tokenize(pp.denoise_text(row[0]), remove_stops=True), row[1]] for row in data]
+
+# Fit the model
+model = fit_logistic_classifier(tokens)
+```
+
+The model dictionary holds the trained model, vectorizer, and label encoder (`help(fit_logistic_classifer)`).
+
+
+
+
+
