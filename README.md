@@ -7,9 +7,9 @@ This repository makes available the training data and main code used to train th
 
 ### Data
 
-The data used in the paper is available [here] (http://socialanalytics.ex.ac.uk/cards/data.zip). You can download the zipfile (32M) directly or you can use the `download.py` script after cloning the repo to automatically download and unzip the data:
+The data used in the paper is available [here](http://socialanalytics.ex.ac.uk/cards/data.zip). You can download the zipfile (32M) directly or you can use the `download.py` script after cloning the repo to automatically download and unzip the data:
 
-`$ python download.py`
+`python download.py`
 
 The data directory has two subfolders:
 
@@ -27,6 +27,13 @@ While we imagine that most people will want to download the training data and ro
 And then pip install the project requirements:
 
 `pip install -r requirements.txt`
+
+Note that we use `spaCy`'s `en_core_web_lg` (778.7M zipped) to tokenize the text, which be downloaded automatically as a requirement. If you want to avoid this, you can remove it from the `requirements.txt` and edit the `preprocess.py` script accordingly.
+
+The code is organized as follows:
+
+* `preprocess.py`: A set of functions to preprocess and tokenize the text.
+* `fit/`: As described more fully in the paper, we our model uses a simple ensemble of a logistic classifier and the [RoBERTa](https://arxiv.org/abs/1907.11692) architecture. The [fit](https://github.com/traviscoan/cards/tree/master/fit) directory provides the code used to fit both parts of the model, as well as code to combine the two estimates. See [fit](https://github.com/traviscoan/cards/tree/master/fit) for more information.
 
 ### Contact us
 
