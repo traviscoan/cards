@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import unicodedata
 from nltk.corpus import stopwords
 import spacy
+from utils import flatten
 
 # Initialize globals
 import en_core_web_lg
@@ -133,5 +134,5 @@ def tokenize(document, remove_stops=False, lemmatize=False):
             else:
                 tokens.append([tok.text.lower() for tok in sentence if tok.pos_ not in POS_TO_REMOVE])
 
-    return tokens
+    return ' '.join(flatten(tokens)).strip()
 

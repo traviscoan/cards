@@ -11,3 +11,6 @@ The `roberta/` subdirectory contains the code to fit and evaluate the model. Spe
 * `cards_training.ipynb`: Includes the code (and, importantly, the hyperparameters) used to fit the CARDS model.
 * `cards_evaluation.ipynb`: Provides the code to evaluate the model performance on held-out data.
 * `cards_inference.ipynb`: Provides code to infer classes in unseen data.
+
+## Logistic
+

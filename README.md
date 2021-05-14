@@ -5,7 +5,7 @@ This repository makes available the training data and main code used to train th
     "Computer-assisted detection and classification of misinformation about climate change" 
     by Travis G. Coan, Constantine Boussalis, John Cook, and Mirjam Nanko.
 
-### Data
+## Data
 
 The data used in the paper is available [here](http://socialanalytics.ex.ac.uk/cards/data.zip). You can download the zipfile (32M) directly or you can use the `download.py` script after cloning the repo to automatically download and unzip the data:
 
@@ -16,7 +16,7 @@ The data directory has two subfolders:
 * `analysis/`: Data to replicate the main analysis in the paper.
 * `training/`:  Data used to train and test the classifer developed in the paper.
 
-### Code
+## Code
 
 While we imagine that most people will want to download the training data and roll their own classifer, we also provide the code used to train and test the model presented in the paper. To use this code, start by creating and attaching a Python virtual environment:
 
@@ -30,7 +30,20 @@ And then pip install the project requirements:
 
 Note that we use `spaCy`'s `en_core_web_lg` (778.7M zipped) to tokenize the text, which be downloaded automatically as a requirement. If you want to avoid this, you can remove it from the `requirements.txt` and edit the `preprocess.py` script accordingly.
 
-The code is organized as follows:
+### Fitting the RoBERTa-Logistic ensemble classifer
 
-* `preprocess.py`: A set of functions to preprocess and tokenize the text.
-* `fit/`: As described more fully in the paper, our model uses a simple ensemble of a logistic classifier and the [RoBERTa](https://arxiv.org/abs/1907.11692) architecture. The [fit](https://github.com/traviscoan/cards/tree/master/fit) directory provides relevant information on how we trained the model.
+As described more fully in the paper, our model uses a simple ensemble of a logistic classifier and the [RoBERTa](https://arxiv.org/abs/1907.11692) architecture.
+
+#### RoBERTa
+
+We used the fantastic `simpletransformers` library to train, test, and perform inference for the RoBERTa side of our model. For more on how to install the `simpletransformers` library, please see:
+
+https://simpletransformers.ai/docs/installation/
+
+The `roberta/` subdirectory contains the code to fit and evaluate the model. Specifically, directory includes the following 3 Jupyter notebooks which walk you through the process:
+
+* `cards_training.ipynb`: Includes the code (and, importantly, the hyperparameters) used to fit the CARDS model.
+* `cards_evaluation.ipynb`: Provides the code to evaluate the model performance on held-out data.
+* `cards_inference.ipynb`: Provides code to infer classes in unseen data.
+
+#### Logistic

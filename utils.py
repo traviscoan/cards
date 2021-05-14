@@ -18,13 +18,14 @@ def flatten(list_of_lists):
     return [item for sublist in list_of_lists for item in sublist]
 
 
-def read_csv(path):
+def read_csv(path, remove_header=False):
     '''
     Takes an absolute path to a CSV file and returns file as
     a Python list.
 
     Args:
         path (str): Absolute path to CSV file.
+        remove_header (bool): Optionally the first line of the CSV.
     
     Returns: 
         list: The CSV file as a list of lists.
@@ -32,7 +33,14 @@ def read_csv(path):
 
     with open(path, 'r', encoding='utf-8', errors='replace') as csvfile:
         csvreader = csv.reader(csvfile)
-        return [row for row in csvreader]
+        data_ = [row for row in csvreader]
+    
+    if remove_header:
+        data = data_[1:]
+    else:
+        data = data_
+    
+    return data
 
 
 def write_json(path, content):
