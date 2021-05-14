@@ -45,13 +45,4 @@ def fit_logistic_classifier(data):
 
     return {'clf': clf_logit, 'label_encoder': le, 'vectorizer': vectorizer}
 
-import os, sys
-sys.path.insert(0, '/Users/tcoan/git_repos/cards')
-
-import preprocess as pp
-from utils import read_csv
-path = "/Users/tcoan/git_repos/cards/data/training/training.csv"
-data = read_csv(path, remove_header=True)
-tokens = [[pp.tokenize(pp.denoise_text(row[0]), remove_stops=True), row[1]] for row in data]
-
 

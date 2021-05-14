@@ -67,6 +67,9 @@ model = fit_logistic_classifier(tokens)
 
 The model dictionary holds the trained model, vectorizer, and label encoder (`help(fit_logistic_classifer)`).
 
+### Pre-trained model weights
+
+The pre-trained model weights for the RoBERTa (and logistic) model used in the paper are available [here](https://socialanalytics.ex.ac.uk/cards/models.zip). Note that this file is large (3.5G zipped) -- sorry!
 
 
 
