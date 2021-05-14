@@ -33,7 +33,7 @@ Note that we use `spaCy`'s `en_core_web_lg` (778.7M zipped) to tokenize the text
 The code is organized as follows:
 
 * `preprocess.py`: A set of functions to preprocess and tokenize the text.
-* `fit/`: As described more fully in the paper, we our model uses a simple ensemble of a logistic classifier and the [RoBERTa](https://arxiv.org/abs/1907.11692) architecture. The [fit](https://github.com/traviscoan/cards/tree/master/fit) directory provides the code used to fit both parts of the model, as well as code to combine the two estimates. See [fit](https://github.com/traviscoan/cards/tree/master/fit) for more information.
+* `fit/`: As described more fully in the paper, our model uses a simple ensemble of a logistic classifier and the [RoBERTa](https://arxiv.org/abs/1907.11692) architecture. The [fit](https://github.com/traviscoan/cards/tree/master/fit) directory provides relevant information on how we trained the model.
 
 ### Contact us
 
