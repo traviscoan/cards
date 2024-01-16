@@ -7,11 +7,7 @@ This repository makes available the training data and main code used to train th
 
 ## Data
 
-The data used in the paper is available [here](http://socialanalytics.ex.ac.uk/cards/data.zip). You can download the zipfile (32M) directly or you can use the `download.py` script after cloning the repo to automatically download and unzip the data:
-
-`python download.py`
-
-The data directory has two subfolders:
+The data used in the paper is available [here](https://drive.google.com/uc?export=download&id=14exmlYCT3-K2byYHFFrShAIYiemJQroi). After unzipping the file, you will find a data directory with two subfolders:
 
 * `analysis/`: Data to replicate the main analysis in the paper.
 * `training/`:  Data used to train and test the classifer developed in the paper.
@@ -69,7 +65,7 @@ The model dictionary holds the trained model, vectorizer, and label encoder (`he
 
 ### Pre-trained model weights
 
-The pre-trained model weights for the RoBERTa (and logistic) model used in the paper are available [here](https://socialanalytics.ex.ac.uk/cards/models.zip). Note that this file is large (3.5G zipped) -- sorry!
+The pre-trained model weights for the RoBERTa (and logistic) model used in the paper are available [here](https://drive.google.com/uc?export=download&id=1cbASuoLNY-kJcm7hUFLTGYzblZFzxaVo). Note that this file is large (3.5G zipped) -- sorry!
 
 
 
