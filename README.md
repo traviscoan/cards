@@ -1,9 +1,9 @@
 # CARDS: Computer-assisted recognition of (climate change) denial and skepticism
 
-This repository makes available the training data and main code used to train the classifer described in the following [paper](https://osf.io/preprints/socarxiv/crxfm/):
+This repository makes available the training data and main code used to train the classifer described in the following [paper](https://doi.org/10.1038/s41598-021-01714-4):
 
-    "Computer-assisted detection and classification of misinformation about climate change" 
-    by Travis G. Coan, Constantine Boussalis, John Cook, and Mirjam Nanko.
+    "Computer-assisted classification of contrarian claims about climate change" 
+    by Travis G. Coan, Constantine Boussalis, John Cook, and Mirjam O. Nanko.
 
 ## Data
 
